@@ -38,3 +38,18 @@ Route::get('kategori/{namaKategori?}', function ($nama = null){
 Route::get('barang/{namaBarang?}/{promo?}', function ($barang = null , $promo = null){
     return view('barang', compact('barang', 'promo')); 
 });
+
+// Route siswa
+use App\Http\Controllers\MyController;
+Route::get('siswa', [MyController::class, 'index']);
+// Create siswa
+Route::get('siswa/create',[MyController::class, 'create']);
+Route::post('/siswa', [MyController::class, 'store']);
+// Show siswa by id
+Route::get('siswa/{id}',[MyController::class, 'show']);
+// edit
+Route::get('siswa/{id}/edit',[MyController::class, 'edit']);
+Route::put('siswa/{id}',[MyController::class, 'update']);
+// delete
+Route::delete('siswa/{id}',[MyController::class, 'destroy']);
+
