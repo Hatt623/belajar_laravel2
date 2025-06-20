@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 // Import
 use DB;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsSeeder extends Seeder
 {
@@ -16,12 +17,23 @@ class ProductsSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('categories')->delete();
         DB::table('products')->delete();
+
+        $category1 = Category::create([
+            'name' => 'Elektronik',
+            'slug' => 'elektronik',
+        ]);
+
+        $category2 = Category::create([
+            'name' => 'Perabotan Rumah',
+            'slug' => 'perabotan-rumah'
+        ]);
 
         Product::create([
             'name' => 'Samsung S25 5g',
             'slug' => 'samsung-s25-5g',
-            'category_id' => 1,
+            'category_id' => $category1->id,
             'description' => 'Lorem Ipsum bla bla bla',
             'image' => 'image.png',
             'price' => 2400000,
@@ -31,7 +43,7 @@ class ProductsSeeder extends Seeder
         Product::create([
             'name' => 'Sapu Lidi',
             'slug' => 'sapu-lidi',
-            'category_id' => 2,
+            'category_id' => $category2->id,
             'description' => 'Lorem Ipsum',
             'image' => 'image.png',
             'price' => 5000,
