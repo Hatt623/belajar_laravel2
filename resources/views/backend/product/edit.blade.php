@@ -59,7 +59,7 @@
                     <div class="col mb-2">
                         @if($product->image)
                         <label for="">Gambar</label>
-                        <img src="{{ $storage->url($product->image) }}" alt="" style="width: 100px; height:100px;">
+                        <img src="{{ Storage::url($product->image) }}" alt="" style="width: 100px; height:100px;">
                         @endif
                         <br>
                         <label for="">Gambar</label>
