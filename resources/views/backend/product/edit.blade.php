@@ -1,0 +1,91 @@
+@extends('layouts.backend')
+@section('content')
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            Edit Produk
+        </div>
+        <div class="card-body">
+            <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
+                @method('put')
+                @csrf
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-2">
+                            <label for="nama Product">Nama Product</label>
+                            <input type="text" value="{{ $product->name }}" name="name" class="form-control @error('name') is-invalid @enderror">
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="mb-2">
+                            <label for="harga">Harga</label>
+                            <input type="number" value="{{ $product->price }}" name="price" class="form-control @error('price') is-invalid @enderror">
+                            @error('price')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-2">
+                            <label for="Kategori">Kategori</label>
+                            <select name="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                                @foreach ($category as $data)
+                                    <option value="{{ $data->id }}" {{ $data->id == $product->category_id ? 'selected' : '' }}>{{ $data->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="stok">Stok</label>
+                        <input type="number" value="{{ $product->stock }}" name="stock" class="form-control @error('stock') is-invalid @enderror">
+                        @error('stock')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-2">
+                        @if($product->image)
+                        <label for="">Gambar</label>
+                        <img src="{{ $storage->url($product->image) }}" alt="" style="width: 100px; height:100px;">
+                        @endif
+                        <br>
+                        <label for="">Gambar</label>
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+                        @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror">{{ $product->description }}</textarea>
+                    @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="mb-2">
+                    <button type="submit" class="btn btn-sm btn-outline-primary">Simpan</button>
+                    <button type="reset" class="btn btn-sm btn-outline-warning">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endsection

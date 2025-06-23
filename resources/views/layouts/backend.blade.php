@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{asset('assets/backend/libs/owl.carousel/dist/assets/owl.carousel.min.css')}}" />
 
   {{-- menambahkan unduh style dan akan dipanggil ketika dibutuhkan --}}
-  @yield('styles');
+  @yield('styles')
 </head>
 
 <body>
@@ -1160,8 +1160,10 @@
   <script src="{{asset('assets/backend/js/dashboards/dashboard.js')}}"></script>
 
   {{-- JS baru --}}
-  @yield('js');
-  @yield('scripts');
+  @yield('js')
+  @yield('scripts')
+  @include('sweetalert::alert')
+  
 </body>
 
 </html>

@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\MyController;
+
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\Admin;
 
@@ -63,5 +66,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route  admin / backend 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', Admin::class]], function (){
     Route::get('/', [BackendController::class, 'index']);
+
+    // crud
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/product', ProductController::class);
 
 });
