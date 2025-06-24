@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 
-use Illuminate\Support\Facades\Storage;
+use Storage;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller
@@ -34,12 +34,12 @@ class ProductController extends Controller
     {
         // validasi
         $validated = $request->validate([
-            'name'          => 'required|unique:categories',
+            'name'          => 'required',
             'category_id'   => 'required',
             'price'         => 'required|numeric',
             'description'   => 'required',
             'stock'         => 'required|numeric',
-            'image'         => 'required|image|mimes:jpg,png',
+            'image'         => 'required|image|mimes:jpg,png|max:1024',
         ]);
 
         $product = new Product();
@@ -82,12 +82,12 @@ class ProductController extends Controller
     {
         // validasi
         $validated = $request->validate([
-            'name'          => 'required|unique:categories',
+            'name'          => 'required',
             'category_id'   => 'required',
             'price'         => 'required|numeric',
             'description'   => 'required',
             'stock'         => 'required|numeric',
-            'image'         => 'image|mimes:jpg,png',
+            // 'image'         => 'image|mimes:jpg,png',
         ]);
 
         $product = Product::findOrFail($id);
