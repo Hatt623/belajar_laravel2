@@ -6,8 +6,9 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">
                         Tambah Category
+                    </div>
                         <div class="card-body">
-                            <form action="{{ route('category.index') }}" method="post" enctype="multipart/form-data" role="form">
+                            <form action="{{ route('backend.category.store') }}" method="post" enctype="multipart/form-data" role="form">
                                 @csrf
                                 <div class="mb-2">
                                     <label for="">Nama Kategori</label>
@@ -27,7 +28,6 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

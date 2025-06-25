@@ -10,8 +10,14 @@ class Category extends Model
     public $fillable= ['name', 'slug'];
 
     // membuat relasi one to many ke model products
-    public function products()
+    public function product()
     {
         return $this->hasMany(Product::class);
+    }
+
+    // megganti kunci dari 'id' ke 'slug'
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

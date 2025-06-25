@@ -127,6 +127,12 @@
     <script src="{{asset('assets/frontend/js/plugins.js')}} "></script>
     <script src="{{asset('assets/frontend/js/main.js')}} "></script>
     @stack('scripts')
+
+    {{-- JS baru --}}
+    @yield('js')
+    @yield('scripts')
+    @include('sweetalert::alert')
+    
 </body>
 
 </html>

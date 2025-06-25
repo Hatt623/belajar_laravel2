@@ -23,4 +23,15 @@ class Product extends Model
         return $this->belongsToMany(Product::class)->withPivot('qty','price')
         ->withTimestamps();
     }
+
+    public function reviews()
+    {
+        return $this->hasmany(Review::class);
+    }
+
+    // megganti kunci dari 'id' ke 'slug'
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

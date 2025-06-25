@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">
                         Data Category
-                        <a href="{{ route('category.create') }}" class="btn btn-info btn-sm" style="color:white; float: right;" 
+                        <a href="{{ route('backend.category.create') }}" class="btn btn-info btn-sm" style="color:white; float: right;" 
                             stle="float: right;">
                             Tambah
                         </a>
@@ -39,12 +39,12 @@
                                         <td> {{$data->slug}} </td>
                                         
                                         <td> 
-                                            <a href="{{ route('category.edit', $data->id) }}"
+                                            <a href="{{ route('backend.category.edit', $data->id) }}"
                                                 class="btn btn-sm btn-warning">
                                                 edit
                                             </a> |
 
-                                            <a href="{{ route('category.destroy', $data->id) }}"
+                                            <a href="{{ route('backend.category.destroy', $data->id) }}"
                                                 class="btn btn-sm btn-danger"
                                                 data-confirm-delete="true">
                                                 delete
