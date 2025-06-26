@@ -9,7 +9,7 @@ class Cart extends Model
 
     public $fillable = ['user_id','product_id','qty'];
 
-    public function products()
+    public function product()
     {
         return $this->belongsTo(Product::class);
     }

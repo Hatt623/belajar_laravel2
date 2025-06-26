@@ -6,8 +6,9 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">
                         Edit Category
+                    </div>
                         <div class="card-body">
-                            <form action="{{ route('category.update', $category->id) }}" method="post" enctype="multipart/form-data" role="form">
+                            <form action="{{ route('backend.category.update', $category->id) }}" method="post" enctype="multipart/form-data" role="form">
                                 @csrf
                                 @method('PUT')
                                 <div class="mb-2">
@@ -28,7 +29,6 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

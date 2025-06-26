@@ -7,9 +7,7 @@
             <div class="col-xl-12">
                 <div class="breadcrumb__title">
                     <h3>Cart</h3>
-                </div>
-                <div class="breadcrumb__list">
-                    <ul>
+                    <ul>    
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li class="color__blue">Cart</li>
                     </ul>
@@ -42,7 +40,7 @@
                             <tr>
                                 <td class="cartarea__product__thumbnail">
                                     <a href="#">
-                                        <img src="{{ Storage::exists($item->product->image) ? Storage::url($item->product->image) : asset('assets/frontend/img/grid/grid_1.png') }}"
+                                        <img src="{{ Storage::url($item->product->image)}}"
                                             alt="{{ $item->product->name }}" width="80">
                                     </a>
                                 </td>

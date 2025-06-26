@@ -41,6 +41,16 @@
                 <span class="hide-menu">Product</span>
               </a>
             </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('backend.orders.index')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-shopping-cart"></i>
+                </span>
+                <span class="hide-menu">Orders</span>
+              </a>
+            </li>
+
           </ul>
         </nav>
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illmunitae\Support\Str;
+use Illuminate\Support\Str;
 
 use App\Models\Cart;
 use App\Models\Order;

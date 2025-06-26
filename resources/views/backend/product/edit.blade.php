@@ -6,7 +6,7 @@
             Edit Produk
         </div>
         <div class="card-body">
-            <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('backend.product.update', $product->id) }}" method="post" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="row">

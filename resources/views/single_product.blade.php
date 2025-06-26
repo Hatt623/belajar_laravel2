@@ -8,8 +8,7 @@
                 <div class="col-xl-12">
                     <div class="breadcrumb__title">
                         <h3>Product</h3>
-                    </div>
-                    <div class="breadcrumb__list">
+
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li class="color__blue">Product Details</li>
@@ -29,14 +28,14 @@
                     <div class="featurearea__details__img">
                         <div class="featurearea__big__img">
                             <div class="featurearea__single__big__img">
-                                <img src="{{ Storage::exists($product->image) ? Storage::url($product->image) : asset('assets/frontend/img/grid/grid_1.png') }}"
+                                <img src="{{Storage::url($product->image)}}"
                                     alt="{{ $product->name }}">
                             </div>
                         </div>
 
                         <div class="featurearea__thumb__img featurearea__thumb__img_slider_active slider__default__arrow">
                             <div class="featurearea__single__thumb__img">
-                                <img src="{{ Storage::exists($product->image) ? Storage::url($product->image) : asset('assets/frontend/img/grid/grid_1.png') }}"
+                                <img src="{{Storage::url($product->image)}}"
                                     alt="{{ $product->name }}">
                             </div>
                         </div>

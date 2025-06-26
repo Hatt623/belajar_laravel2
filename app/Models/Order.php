@@ -15,7 +15,7 @@ class Order extends Model
 
     // relasi many to many dengan produk
     public function products(){
-        return $this->belongsToMany(Product::class)->withPivot('qty','price')
+        return $this->belongsToMany(Product::class, 'order_products')->withPivot('qty','price')
         ->withTimestamps();
     }
 }

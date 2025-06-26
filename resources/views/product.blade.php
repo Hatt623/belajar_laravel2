@@ -55,15 +55,8 @@
                                     <div class="grid__wraper__img">
                                         <div class="grid__wraper__img__inner">
                                             <a href="{{ url('/product/' . $data->slug) }}">
-                                                @php
-                                                $image = $data->image && Storage::exists($data->image)
-                                                        ? Storage::url($data->image)
-                                                        : asset('assets/frontend/img/grid/grid__1.png');
-
-                                                    $secondaryImage = $image; // same image logic
-                                                @endphp
-                                                <img class="primary__image" src="{{ $image }}" alt="{{ $data->name }}">
-                                                <img class="secondary__image" src="{{ $secondaryImage }}"
+                                                <img class="primary__image" src="{{Storage::url($data->image)}}" alt="{{ $data->name }}">
+                                                <img class="secondary__image" src="{{ Storage::url($data->image) }}"
                                                      alt="{{ $data->name }}">
                                             </a>
                                         </div>
