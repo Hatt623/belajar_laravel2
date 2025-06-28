@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Order;
 use Illuminate\Http\Request;
-
+use App\Models\Order; 
 class OrderController extends Controller
 {
     public function index()
@@ -28,6 +27,8 @@ class OrderController extends Controller
     public function destroy($id)
     {
         $order = Order::findOrFail($id);
+
+        $order -> products()->detach();
         $order->delete();
         toast('Pesanan berhasil dihapus', 'success');
         return redirect()->route('backend.orders.index');

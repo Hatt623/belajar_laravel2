@@ -10,7 +10,7 @@ use App\Http\Middleware\Admin;
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\OrderController as BackendOrderController;
+use App\Http\Controllers\Backend\OrderController as BackendOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReviewController;
 
@@ -58,8 +58,6 @@ Route::group(['prefix' => 'admin','as' => 'backend.', 'middleware' => ['auth', A
     Route::resource('/product', ProductController::class);
     Route::resource('/orders', BackendOrderController::class);
     Route::put('/orders/{id}/status', [BackendOrderController::class, 'updateStatus'])->name('orders.updateStatus');
-
-
 });
 
 

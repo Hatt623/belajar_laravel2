@@ -39,7 +39,9 @@ class CartController extends Controller
 
         if ($cart) {
             $cart->increment('qty', $request->qty);
-        } else {
+        } 
+        
+        else {
             Cart::create([
                 'user_id'    => Auth::id(),
                 'product_id' => $id,
@@ -96,6 +98,7 @@ class CartController extends Controller
         ]);
 
         // Simpan detail order ke pivot `order_product`
+        // Attcach untuk nambar, detach menghapus, sync untuk update <- (bila pake pivot (Many to many) pakai ini)
         foreach ($cartItems as $item) {
             // Kurangi stok
             $product = Product::find($item->product_id);

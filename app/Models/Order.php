@@ -14,6 +14,7 @@ class Order extends Model
     }
 
     // relasi many to many dengan produk
+    // Pivot digunakan untuk apa yang ingin dipanggil
     public function products(){
         return $this->belongsToMany(Product::class, 'order_products')->withPivot('qty','price')
         ->withTimestamps();

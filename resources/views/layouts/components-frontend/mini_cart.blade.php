@@ -22,7 +22,7 @@
                         <form action="{{ route('cart.remove', $item->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button title="Remove"><i class="fa fa-close"></i></button>
+                            <button title="Remove" class="minicart__close__btn"><i class="fa fa-close"></i></button>
                         </form>
                     </div>
                     <div class="minicart__single__content">

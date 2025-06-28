@@ -17,7 +17,7 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $orders = Order::with('products')->where('user_id', auth()->id())->findOrfail();
+        $order = Order::with('products')->where('user_id', auth()->id())->findOrfail($id);
 
         return view('order_detail', compact('order'));
     }

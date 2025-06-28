@@ -118,7 +118,7 @@
     <script src="{{asset('assets/frontend/js/jquery.meanmenu.min.js')}} "></script>
     <script src="{{asset('assets/frontend/js/ajax-form.js')}} "></script>
     <script src="{{asset('assets/frontend/js/wow.min.js')}} "></script>
-    <script src="{{asset('assets/frontend/js/jquery.scrollUp.min.js')}} "></script>
+    <script src="{{asset('assets/frontend/js/jquery.scrollUp.min.js')}} "></script>~
     <script src="{{asset('assets/frontend/js/imagesloaded.pkgd.min.js')}} "></script>
     <script src="{{asset('assets/frontend/js/jquery.magnific-popup.min.js')}} "></script>
     <script src="{{asset('assets/frontend/js/waypoints.min.js')}} "></script>
