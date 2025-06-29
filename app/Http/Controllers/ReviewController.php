@@ -15,7 +15,7 @@ class ReviewController extends Controller
         ]);
 
         $review             = new Review();
-        $review->user_id    = auth()->user()->id();
+        $review->user_id    = auth()->user()->id;
         $review->product_id = $request->product_id;
         $review->point      = $request->point;
         $review->comment    = $request->comment;

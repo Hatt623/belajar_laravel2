@@ -20,7 +20,7 @@ Route::get('/',[FrontendController::class, 'index']);
 Route::get('/product',[FrontendController::class, 'product'])->name('product.index');
 Route::get('/product/{product}', [FrontendController::class, 'singleproduct'])->name('product.show');
 Route::get('/product/category/{slug}', [FrontendController::class, 'filterByCategory'])->name('product.filter');
-ROute::get('/search', [FrontendController::class, 'search'])->name('product.search');
+Route::get('/search', [FrontendController::class, 'search'])->name('product.search');
 
 Route::get('/about',[FrontendController::class, 'about']);
     // cart
